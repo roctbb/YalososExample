@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yalosos: results</title>
+</head>
+<body>
+<h2>Yalosos<br><small style="color: gray;">Ilososing everywhere</small></h2>
+{% if results|length == 0 %}
+<b>Результатов нет :(</b>
+{% endif %}
+
+{% for anek in results %}
+<p>{{ anek['text'].replace('\n', '<br>')|safe }}</p>
+<p><a target="_blank" href="https://vk.com/baneks?w=wall-45491419_{{ anek['id'] }}">К посту...</a></p>
+<hr>
+{% endfor %}
+</body>
+</html>
